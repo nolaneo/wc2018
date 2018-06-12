@@ -41,11 +41,53 @@ th {
 }
 
 th:first-of-type {
-  padding-left: none;
+  padding-left: 0;
+  text-align: left;
 }
 
 th:last-of-type {
-  padding-right: none;
+  padding-right: 0;
+}
+
+td {
+  text-align: center;
+  padding: 20px;
+}
+
+td:last-of-type {
+  font-weight: bold;
+}
+
+tr:nth-child(:even) {
+  background-color: #fefefe;
+}
+
+tr:nth-child(:odd) {
+  background-color: #cecece;
+}
+
+.pool-table-flag {
+  width: 40px;
+  height: 40px;
+  transform: rotate(-10deg);
+  margin-left: -5px;
+}
+
+.pool-table-flag:nth-child(1) {
+  z-index: 4;
+  margin-left: 0;
+}
+
+.pool-table-flag:nth-child(2) {
+  z-index: 3;
+}
+
+.pool-table-flag:nth-child(3) {
+  z-index: 2;
+}
+
+.pool-table-flag:nth-child(4) {
+  z-index: 1;
 }
 
 .u__width__100 {
