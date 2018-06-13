@@ -135,3 +135,18 @@ tr:nth-child(odd) {
   align-items: center;
   justify-content: center;
 }
+
+@media only screen and (max-width: 768px) {
+  .pool-table-flag {
+    height: 20px;
+    width: 20px;
+  }
+
+  td {
+    padding: 5px;
+  }
+
+  .hide-small {
+    display: none;
+  }
+}
