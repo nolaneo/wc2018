@@ -1,0 +1,20 @@
+<h3>POOL STAGE TABLE</h3>
+
+<table class="pool-stage-table">
+  <thead>
+    <th></th>
+    <th class="u__width__100">PLAYER</th>
+    <th>PL</th>
+    <th>W</th>
+    <th>D</th>
+    <th>L</th>
+    <th>GF</th>
+    <th>GA</th>
+    <th>TOTAL</th>
+  </thead>
+  <tbody>
+    {{#each players as |player|}}
+      {{pool-table-row player=player}}
+    {{/each}}
+  </tbody>
+</table>

@@ -51,19 +51,15 @@ th:last-of-type {
 
 td {
   text-align: center;
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 td:last-of-type {
   font-weight: bold;
 }
 
-tr:nth-child(:even) {
-  background-color: #fefefe;
-}
-
-tr:nth-child(:odd) {
-  background-color: #cecece;
+tr:nth-child(odd) {
+  background-color: #f0f0f0;
 }
 
 .pool-table-flag {
