@@ -1,6 +1,6 @@
 export default [
   {
-    name: "Conor",
+    name: "Ming",
     teams: ["Belgium", "Mexico", "Egypt", "Morocco"]
   },
   {
