@@ -17,7 +17,7 @@ export default Component.extend({
   },
 
   fetchPoolResults: task(function * () {
-    let data = yield this.get('ajax').request('http://worldcup.sfg.io/teams/results');
+    let data = yield this.get('ajax').request('https://world-cup-json.herokuapp.com/teams/results');
     let players = this.get('players');
     players.forEach(player => {
       STATISTICS.forEach(statistic => {

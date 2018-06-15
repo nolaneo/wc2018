@@ -5,7 +5,7 @@ import { inject } from '@ember/service';
 export default Component.extend({
   ajax: inject(),
 
-  apiURL: 'http://worldcup.sfg.io/matches',
+  apiURL: 'https://world-cup-json.herokuapp.com/matches',
 
   didInsertElement() {
     this._super(...arguments);
