@@ -6,7 +6,6 @@ export default Component.extend({
   ajax: inject(),
 
   apiURL: 'https://world-cup-json.herokuapp.com/matches',
-  spinner: 'wc2018/master/public/assets/images/loading-spinner',
 
   didInsertElement() {
     this._super(...arguments);
