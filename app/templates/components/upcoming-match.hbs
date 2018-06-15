@@ -6,11 +6,24 @@
   </div>
 
   <div class="layout__box o__centers-all o__flexes-to-1">
-    <div class="t__centered">
-      <h2>V</h2>
-      <h3>{{moment-from-now match.datetime}}</h3>
-      <p class="subtext">({{moment-format (moment match.datetime) 'MMM DD - HH:SS'}})</p>
-    </div>
+    {{#if (eq filtering "in progress")}}
+      <div class="t__centered">
+        <h2 class="score">{{match.home_team.goals}} – {{match.away_team.goals}}</h2>
+        <div class="layout__box o__has-columns">
+          <h3>{{match.time}}</h3>
+          <div class="ring-container">
+            <div class="ringring"></div>
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+    {{else}}
+      <div class="t__centered">
+        <h2>V</h2>
+        <h3>{{moment-from-now match.datetime}}</h3>
+        <p class="subtext">({{moment-format (moment match.datetime) 'MMM DD - HH:SS'}})</p>
+      </div>
+    {{/if}}
 
   </div>
 

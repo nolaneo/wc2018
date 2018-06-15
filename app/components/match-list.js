@@ -20,7 +20,7 @@ export default Component.extend({
   fetchMatches: task(function * () {
     let data = yield this.get('ajax').request(this.get('apiURL'));
     let matches = data
-      .filter(match => match.status === "future")
+      .filter(match => match.status === this.get('filtering'))
       .filter(match => match.home_team.code !== "TBD" || match.away_team.code !== "TBD");
     this.set('matches', this.injectPlayerName(matches));
   }),
