@@ -172,3 +172,41 @@ tr:nth-child(odd) {
     min-width: 110px;
   }
 }
+
+.t__light {
+  color: #ccc;
+}
+
+.t__small-caps {
+  font-size: 10px;
+  color: #ccc;
+}
+
+.u__mt__10 {
+  margin-top: 10px;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid #ccc;
+  border-color: #ccc transparent #ccc transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
