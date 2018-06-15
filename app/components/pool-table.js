@@ -5,6 +5,7 @@ import { inject } from '@ember/service';
 const STATISTICS = ['wins', 'draws', 'losses', 'goals_for', 'goals_against', 'games_played', 'goal_differential', 'points'];
 
 export default Component.extend({
+  spinner: 'wc2018/master/public/assets/images/loading-spinner.gif',
   ajax: inject(),
   didInsertElement() {
     this._super(...arguments);
