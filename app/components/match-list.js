@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { task } from 'ember-concurrency';
+import { task, timeout } from 'ember-concurrency';
 import { inject } from '@ember/service';
 
 export default Component.extend({
@@ -15,7 +15,18 @@ export default Component.extend({
       player.teams.map(team => teamToPlayerSet[team] = player.name);
     });
     this.set('teamToPlayerSet', teamToPlayerSet);
+    this.get('initialMatchFetch').perform();
   },
+
+  initialMatchFetch: task(function * () {
+    yield this.get('fetchMatches').perform();
+    this.get('pollResults').perform();
+  }),
+
+  pollResults: task(function * () {
+    yield timeout(10000);
+    yield this.get('fetchMatches').perform();
+  }),
 
   fetchMatches: task(function * () {
     let data = yield this.get('ajax').request(this.get('apiURL'));

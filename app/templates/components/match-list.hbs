@@ -3,13 +3,13 @@
     {{upcoming-match match=match filtering=filtering}}
   {{/each}}
 
-  {{#unless (or matches.length fetchMatches.isRunning)}}
+  {{#unless (or matches.length initialMatchFetch.isRunning)}}
     <div class="t__small-caps u__mt__10">No matches to show!</div>
   {{/unless}}
 </div>
 
-{{#if fetchMatches.isRunning}}
-  <div class="layout__box o__flexes-to-1 o__centers-horizontally">
+{{#if initialMatchFetch.isRunning}}
+  <div class="layout__box o__flexes-to-1 o__centers-horizontally u__mt__10">
     <div class="t__centered">
       <img width="24" height="24" src="https://raw.githubusercontent.com/nolaneo/wc2018/master/public/assets/images/loading-spinner.gif">
       <div class="t__small-caps u__mt__10">Loading Fixtures</div>

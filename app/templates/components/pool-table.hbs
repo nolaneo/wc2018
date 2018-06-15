@@ -13,8 +13,17 @@
     <th>PTS</th>
   </thead>
   <tbody>
-    {{#each players as |player|}}
+    {{#each sortedPlayers as |player|}}
       {{pool-table-row player=player}}
     {{/each}}
   </tbody>
 </table>
+
+{{#if fetchPoolResults.isRunning}}
+  <div class="layout__box o__flexes-to-1 o__centers-horizontally">
+    <div class="t__centered">
+      <img width="24" height="24" src="https://raw.githubusercontent.com/nolaneo/wc2018/master/public/assets/images/loading-spinner.gif">
+      <div class="t__small-caps u__mt__10">Loading Results</div>
+    </div>
+  </div>
+{{/if}}
