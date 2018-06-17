@@ -9,7 +9,7 @@ export default [
   },
   {
     name: "Dave",
-    teams: ["Portugal", "Switzerland", "Peru", "South Korea"]
+    teams: ["Portugal", "Switzerland", "Peru", "Korea Republic"]
   },
   {
     name: "Dylan",

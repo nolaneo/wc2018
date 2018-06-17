@@ -26,13 +26,15 @@ export default Component.extend({
   pollResults: task(function * () {
     yield timeout(10000);
     yield this.get('fetchMatches').perform();
+    this.get('pollResults').perform();
   }),
 
   fetchMatches: task(function * () {
     let data = yield this.get('ajax').request(this.get('apiURL'));
     let matches = data
       .filter(match => match.status === this.get('filtering'))
-      .filter(match => match.home_team.code !== "TBD" || match.away_team.code !== "TBD");
+      .filter(match => match.home_team.code !== "TBD" || match.away_team.code !== "TBD")
+      .sortBy('datetime');
     this.set('matches', this.injectPlayerName(matches));
   }),
 
