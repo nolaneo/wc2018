@@ -417,4 +417,14 @@ td {
     width: 100px;
     font-size: 13px;
   }
+
+  .card {
+    transform: scale(0.7);
+    transform-origin: top;
+    margin: 0 -80px;
+  }
+
+  .pool-table {
+    margin-bottom: -100px;
+  }
 }
