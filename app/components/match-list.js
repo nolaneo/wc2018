@@ -7,6 +7,8 @@ export default Component.extend({
 
   apiURL: 'https://world-cup-json.herokuapp.com/matches',
 
+  filtering: 'future',
+
   didInsertElement() {
     this._super(...arguments);
     this.get('fetchMatches').perform();
@@ -16,6 +18,7 @@ export default Component.extend({
     });
     this.set('teamToPlayerSet', teamToPlayerSet);
     this.get('initialMatchFetch').perform();
+    this.set('clockTime', 10);
   },
 
   initialMatchFetch: task(function * () {
@@ -24,8 +27,12 @@ export default Component.extend({
   }),
 
   pollResults: task(function * () {
-    yield timeout(10000);
+    while (this.get('clockTime') > 0) {
+      yield timeout(1000);
+      this.decrementProperty('clockTime');
+    }
     yield this.get('fetchMatches').perform();
+    this.set('clockTime', 10);
     this.get('pollResults').perform();
   }),
 

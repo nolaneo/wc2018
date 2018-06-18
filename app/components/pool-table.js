@@ -5,6 +5,7 @@ import { inject } from '@ember/service';
 const STATISTICS = ['wins', 'draws', 'losses', 'goals_for', 'goals_against', 'games_played', 'goal_differential', 'points'];
 
 export default Component.extend({
+  classNames: ['card', 'o__no-padding', 'layout__box', 'o__has-rows', 'pool-table', 'u__mb__20'],
   ajax: inject(),
   didInsertElement() {
     this._super(...arguments);

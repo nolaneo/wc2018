@@ -1,11 +1,5 @@
-{{pool-table players=model}}
-
-<hr>
-
-<h3>LIVE NOW</h3>
-{{match-list players=model filtering="in progress"}}
-
-
-
-<h3>UPCOMING FIXTURES</h3>
-{{match-list players=model filtering="future"}}
+<div class="layout__box o__flexes-to-1 o__has-rows main-content">
+  {{pool-table players=model}}
+  {{live-matches players=model}}
+  {{match-list players=model}}
+</div>

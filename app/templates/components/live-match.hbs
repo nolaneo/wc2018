@@ -1,0 +1,63 @@
+<div class="card-header o__blue layout__box o__has-columns o__centers-vertically">
+  <div>
+    <div class="ring-container">
+      <div class="ringring"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+  <div class="u__ml__60 live-match-title layout__box o__flexes-to-1">
+    <b>LIVE</b> ({{match.time}})
+  </div>
+  <div class="clock-tick">
+    {{#if fetchMatches.isRunning}}
+      Updating...
+    {{else}}
+      Updating in: {{clockTime}}
+    {{/if}}
+  </div>
+</div>
+<div class="layout__box o__flexes-to-1 live-match-container">
+  <table class="u__width__100">
+    <tbody>
+      <tr>
+        <td class="flag-sizer">
+          <img class="fixture-flag" src="https://raw.githubusercontent.com/nolaneo/wc2018/master/public/assets/images/flags/{{dasherize (lowercase match.home_team.country)}}.png"/>
+        </td>
+        <td rowspan="3">
+          {{!--empty--}}
+        </td>
+        <td class="score" rowspan="3">
+          {{match.home_team.goals}}
+        </td>
+        <td class="score-divider" rowspan="3">
+          –
+        </td>
+        <td class="score" rowspan="3">
+          {{match.away_team.goals}}
+        </td>
+        <td rowspan="3">
+          {{!--empty--}}
+        </td>
+        <td class="flag-sizer">
+          <img class="fixture-flag" src="https://raw.githubusercontent.com/nolaneo/wc2018/master/public/assets/images/flags/{{dasherize (lowercase match.away_team.country)}}.png"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="live-team-name">
+          {{uppercase match.home_team.country}}
+        </td>
+        <td class="live-team-name">
+          {{uppercase match.away_team.country}}
+        </td>
+      </tr>
+      <tr>
+        <td class="live-player-name">
+          {{match.home_team.player_name}}
+        </td>
+        <td class="live-player-name">
+          {{match.away_team.player_name}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
