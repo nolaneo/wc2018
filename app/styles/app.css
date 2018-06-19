@@ -189,6 +189,22 @@ td {
   justify-content: center;
 }
 
+.past-score {
+  font-size: 25px;
+  font-weight: 500;
+  margin: auto 0;
+}
+
+.past-score.o__right {
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.past-score.o__left {
+  margin-right: 15px;
+  margin-left: 5px;
+}
+
 .fixture-team {
   min-width: 150px;
 }
