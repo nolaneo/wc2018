@@ -1,11 +1,7 @@
 import Component from '@ember/component';
 import { task, timeout } from 'ember-concurrency';
-import { inject } from '@ember/service';
 
 export default Component.extend({
-  ajax: inject(),
-
-  apiURL: 'https://world-cup-json.herokuapp.com/matches',
 
   filtering: 'future',
 
@@ -37,7 +33,7 @@ export default Component.extend({
   }),
 
   fetchMatches: task(function * () {
-    let data = yield this.get('ajax').request(this.get('apiURL'));
+    let data =  yield this.get('fetchTask').perform();
     let matches = data
       .filter(match => match.status === this.get('filtering'))
       .filter(match => match.home_team.code !== "TBD" || match.away_team.code !== "TBD")

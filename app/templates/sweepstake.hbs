@@ -1,5 +1,6 @@
 <div class="layout__box o__flexes-to-1 o__has-rows main-content">
   {{pool-table players=model}}
-  {{live-matches players=model}}
-  {{match-list players=model}}
+  {{live-matches players=model fetchTask=fetchTask}}
+  {{past-matches players=model fetchTask=fetchTask}}
+  {{match-list players=model fetchTask=fetchTask}}
 </div>

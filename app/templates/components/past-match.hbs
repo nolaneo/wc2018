@@ -1,0 +1,18 @@
+<div class="layout__box o__flexes-to-1 live-match-container o__has-columns o__centers-vertically">
+  <div>
+    <img class="upcoming-match-flag" src="https://raw.githubusercontent.com/nolaneo/wc2018/master/public/assets/images/flags/{{dasherize (lowercase match.home_team.country)}}.png"/>
+  </div>
+  <div class="upcoming-country-name layout__box o__flexes-to-5 t__centered">
+    <b>{{uppercase match.home_team.country}}</b> – {{uppercase match.home_team.player_name}} <b style="margin-left: 20px"><{{match.home_team.goals}}</b>
+  </div>
+
+  <div class="layout__box o__flexes-to-5">
+  </div>
+
+  <div class="upcoming-country-name layout__box o__flexes-to-5 t__centered">
+    <b style="margin-right: 20px"><{{match.away_team.goals}}</b> {{uppercase match.away_team.player_name}} – <b>{{uppercase match.away_team.country}}</b>
+  </div>
+  <div>
+    <img class="upcoming-match-flag" src="https://raw.githubusercontent.com/nolaneo/wc2018/master/public/assets/images/flags/{{dasherize (lowercase match.away_team.country)}}.png"/>
+  </div>
+</div>
