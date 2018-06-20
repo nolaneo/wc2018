@@ -394,6 +394,32 @@ td {
   }
 }
 
+.pool-table-row {
+  cursor: pointer;
+}
+
+
+.pool-table-row:hover {
+  background: white;
+  background-color: #ccc !important;
+}
+
+.pool-table-row.o__is-filtering {
+  background: white;
+  background-color: #41479b !important;
+}
+
+.pool-table-row.o__is-filtering td,
+.pool-table-row.o__is-filtering td b {
+  color: white !important;
+}
+
+.pool-table-row.o__is-filtering:hover {
+  background-color: #41479bdd !important;
+}
+
+
+
 @media only screen and (max-width: 768px) {
   .pool-table th {
     padding: 10px 10px;

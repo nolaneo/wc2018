@@ -19,5 +19,15 @@ export default Controller.extend({
     let result = yield this.get('ajax').request(this.get('apiURL'));
     this.set('runningTask', null);
     return result;
-  })
+  }),
+
+  actions: {
+    toggleFilter(player) {
+      if (this.get('filterPlayer') === player) {
+        this.set('filterPlayer', null);
+      } else {
+        this.set('filterPlayer', player);
+      }
+    }
+  }
 });

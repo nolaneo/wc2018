@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import { task, timeout } from 'ember-concurrency';
+import { computed } from '@ember/object';
 
 export default Component.extend({
 
@@ -39,6 +40,17 @@ export default Component.extend({
       .filter(match => match.home_team.code !== "TBD" || match.away_team.code !== "TBD")
       .sortBy('datetime');
     this.set('matches', this.injectPlayerName(matches));
+  }),
+
+  matchesFilteredByPlayer: computed('matches.[]', 'filterPlayer', function() {
+    let filterPlayer = this.get('filterPlayer');
+    if (filterPlayer) {
+      return this.get('matches').filter(match => {
+        return match.home_team.player_name === filterPlayer || match.away_team.player_name === filterPlayer;
+      });
+    } else {
+      return this.get('matches');
+    }
   }),
 
   injectPlayerName(matchArray) {

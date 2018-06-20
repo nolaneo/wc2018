@@ -1,6 +1,9 @@
 <div class="layout__box o__flexes-to-1 o__has-rows main-content">
-  {{pool-table players=model}}
+  {{pool-table players=model filterPlayer=filterPlayer toggleFilter=(action 'toggleFilter')}}
   {{live-matches players=model fetchTask=fetchTask}}
-  {{past-matches players=model fetchTask=fetchTask}}
-  {{match-list players=model fetchTask=fetchTask}}
+  {{#if filterPlayer}}
+    <h3>Showing matches for {{filterPlayer}}</h3>
+  {{/if}}
+  {{past-matches players=model filterPlayer=filterPlayer fetchTask=fetchTask}}
+  {{match-list players=model filterPlayer=filterPlayer fetchTask=fetchTask}}
 </div>

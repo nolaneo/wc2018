@@ -13,7 +13,11 @@
   </thead>
   <tbody>
     {{#each sortedPlayers as |player|}}
-      {{pool-table-row player=player}}
+      {{pool-table-row
+        player=player
+        filterPlayer=filterPlayer
+        toggleFilter=toggleFilter
+      }}
     {{/each}}
   </tbody>
 </table>
