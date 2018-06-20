@@ -395,6 +395,14 @@ td {
 }
 
 @media only screen and (max-width: 768px) {
+  .pool-table th {
+    padding: 10px 10px;
+  }
+
+  .pool-table td {
+    padding: 10px 10px;
+  }
+
   .pool-table-flag {
     height: 20px;
     width: 20px;
