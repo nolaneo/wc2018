@@ -6,7 +6,8 @@
       {{/if}}
     </div>
     <div class="layout__box t__centered o__flexes-to-1 stat-time">
-      <img src="/assets/svgs/{{event.type_of_event}}.svg" />
+      {{event.type_of_event}}
+      {{!-- <img src="https://raw.githubusercontent.com/nolaneo/wc2018/master/public/assets/images/svgs/{{event.type_of_event}}.svg" /> --}}
     </div>
     <div class="layout__box t__right stat-event">
       {{#if (eq event.side 'away')}}
