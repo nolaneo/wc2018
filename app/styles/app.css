@@ -23,6 +23,10 @@ header {
   padding: 20px
 }
 
+.u__pad__50 {
+  padding: 50px
+}
+
 .card {
   border-radius: 5px;
   overflow: hidden;
@@ -69,19 +73,33 @@ h3 {
 }
 
 .stat-event {
-  width: 45%;
+  width: calc(50% - 20px);
 }
 
 .stat-time {
-  width: 10%;
+  width: 30px;
+}
+
+.stat-image {
+  width: 20px;
+  height: 20px;
 }
 
 .stat-row {
+  padding: 5px;
   height: 50px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.stat-row:nth-of-type(even) {
-  background-color: #fefefe;
+
+.stat-spacer {
+  height: 7px;
+  border-bottom: 1px solid #ddd;
+}
+
+.u__hidden {
+  display: none;
 }
 
 table {
@@ -284,6 +302,22 @@ td {
   margin-top: 13px;
 }
 
+.u__mr__15 {
+  margin-right: 15px;
+}
+
+.u__ml__15 {
+  margin-left: 15px;
+}
+
+.u__mr__5 {
+  margin-right: 5px;
+}
+
+.u__ml__5 {
+  margin-left: 5px;
+}
+
 .lds-dual-ring {
   display: inline-block;
   width: 16px;
@@ -445,6 +479,10 @@ td {
 
 
 @media only screen and (max-width: 768px) {
+  .small-stat-text * {
+    font-size: 10px;
+  }
+
   .pool-table th {
     padding: 10px 10px;
   }

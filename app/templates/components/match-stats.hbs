@@ -1,17 +1,22 @@
 {{#each events as |event|}}
-  <div class="layout__box o__has-columns o__centers-vertically stat-row">
-    <div class="layout__box t__left stat-event">
+  <div class="layout__box o__has-columns o__centers-vertically stat-row small-stat-text">
+    <div class="layout__box t__left stat-event o__has-columns">
       {{#if (eq event.side 'home')}}
-        <b>{{event.time}}</b> <span class="t__light">{{event.player}}</span>
+        <div>
+          <b class="u__mr__15">{{event.time}}</b> <span class="t__light">{{event.player}}</span>
+        </div>
+        <div class="layout__box o__flexes-to-1 stat-spacer u__ml__15"></div>
       {{/if}}
     </div>
     <div class="layout__box t__centered o__flexes-to-1 stat-time">
-      {{event.type_of_event}}
-      {{!-- <img src="https://raw.githubusercontent.com/nolaneo/wc2018/master/public/assets/images/svgs/{{event.type_of_event}}.svg" /> --}}
+      <img class="stat-image" src="https://raw.githubusercontent.com/nolaneo/wc2018/master/public/assets/images/events/{{event.type_of_event}}.png" />
     </div>
-    <div class="layout__box t__right stat-event">
+    <div class="layout__box t__right stat-event o__has-columns">
       {{#if (eq event.side 'away')}}
-        <span class="t__light">{{event.player}}</span> <b>{{event.time}}</b>
+        <div class="layout__box o__flexes-to-1 stat-spacer u__mr__15"></div>
+        <div>
+          <span class="t__light u__mr__15">{{event.player}}</span> <b>{{event.time}}</b>
+        </div>
       {{/if}}
     </div>
   </div>
