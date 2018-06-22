@@ -1,6 +1,7 @@
 import Component from '@ember/component';
 import { task, timeout } from 'ember-concurrency';
 import { computed } from '@ember/object';
+import matchData from 'wc2018/data/matches';
 
 export default Component.extend({
 
@@ -15,7 +16,7 @@ export default Component.extend({
     });
     this.set('teamToPlayerSet', teamToPlayerSet);
     this.get('initialMatchFetch').perform();
-    this.set('clockTime', 10);
+    this.set('clockTime', 30);
   },
 
   initialMatchFetch: task(function * () {
@@ -29,17 +30,17 @@ export default Component.extend({
       this.decrementProperty('clockTime');
     }
     yield this.get('fetchMatches').perform();
-    this.set('clockTime', 10);
+    this.set('clockTime', 30);
     this.get('pollResults').perform();
   }),
 
   fetchMatches: task(function * () {
     let data =  yield this.get('fetchTask').perform();
-    let matches = data
+    let matches = this.injectGameStages(data)
       .filter(match => match.status === this.get('filtering'))
-      .filter(match => match.home_team.code !== "TBD" || match.away_team.code !== "TBD")
       .sortBy('datetime');
-    this.set('matches', this.injectPlayerName(matches));
+    matches = this.injectPlayerName(matches);
+    this.set('matches', matches);
   }),
 
   matchesFilteredByPlayer: computed('matches.[]', 'filterPlayer', function() {
@@ -60,5 +61,12 @@ export default Component.extend({
       return match;
     })
   },
+
+  injectGameStages(matchArray) {
+    return matchArray.map((match, index) => {
+      match.stage = matchData[index].stage;
+      return match;
+    });
+  }
 
 });

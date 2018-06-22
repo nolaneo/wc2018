@@ -1,18 +1,31 @@
 <div class="card-header o__white layout__box o__has-columns o__centers-vertically">
-  {{uppercase (moment-from-now match.datetime)}} <span class="u__ml__20 t__light">{{moment-format (moment match.datetime) 'MMM DD - HH:SS'}}</span>
+  <div class="layout__box o__flexes-to-1">
+    {{uppercase (moment-from-now match.datetime)}} <span class="u__ml__20 t__light">{{moment-format (moment match.datetime) 'MMM DD - HH:SS'}}</span>
+  </div>
+  <div>
+    {{match.stage}}
+  </div>
 </div>
 <div class="layout__box o__flexes-to-1 live-match-container o__has-columns o__centers-vertically">
   <div>
     <img class="upcoming-match-flag" src="https://raw.githubusercontent.com/nolaneo/wc2018/master/public/assets/images/flags/{{dasherize (lowercase match.home_team.country)}}.png"/>
   </div>
   <div class="upcoming-country-name layout__box o__flexes-to-5 t__centered">
-    <b>{{uppercase match.home_team.country}}</b> – {{uppercase match.home_team.player_name}}
+    {{#if (eq match.home_team.code 'TBD')}}
+      <b>TBD</b>
+    {{else}}
+      <b>{{uppercase match.home_team.country}}</b> – {{uppercase match.home_team.player_name}}
+    {{/if}}
   </div>
 
   <div class="layout__box o__flexes-to-5"></div>
 
   <div class="upcoming-country-name layout__box o__flexes-to-5 t__centered">
-    {{uppercase match.away_team.player_name}} – <b>{{uppercase match.away_team.country}}</b>
+    {{#if (eq match.away_team.code 'TBD')}}
+      <b>TBD</b>
+    {{else}}
+      {{uppercase match.away_team.player_name}} – <b>{{uppercase match.away_team.country}}</b>
+    {{/if}}
   </div>
   <div>
     <img class="upcoming-match-flag" src="https://raw.githubusercontent.com/nolaneo/wc2018/master/public/assets/images/flags/{{dasherize (lowercase match.away_team.country)}}.png"/>
