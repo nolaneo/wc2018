@@ -1,0 +1,17 @@
+{{#each events as |event|}}
+  <div class="layout__box o__has-columns o__centers-vertically stat-row">
+    <div class="layout__box t__left stat-event">
+      {{#if (eq event.side 'home')}}
+        <b>{{event.time}}</b> <span class="t__light">{{event.player}}</span>
+      {{/if}}
+    </div>
+    <div class="layout__box t__centered o__flexes-to-1 stat-time">
+      <img src="/assets/svgs/{{event.type_of_event}}.svg" />
+    </div>
+    <div class="layout__box t__right stat-event">
+      {{#if (eq event.side 'away')}}
+        <span class="t__light">{{event.player}}</span> <b>{{event.time}}</b>
+      {{/if}}
+    </div>
+  </div>
+{{/each}}

@@ -68,6 +68,22 @@ h3 {
   text-align: center;
 }
 
+.stat-event {
+  width: 45%;
+}
+
+.stat-time {
+  width: 10%;
+}
+
+.stat-row {
+  height: 50px;
+}
+
+.stat-row:nth-of-type(even) {
+  background-color: #fefefe;
+}
+
 table {
   border-collapse: collapse;
 }
@@ -396,6 +412,14 @@ td {
 
 .pool-table-row {
   cursor: pointer;
+}
+
+.t__left {
+  text-align: left;
+}
+
+.t__right {
+  text-align: right;
 }
 
 
