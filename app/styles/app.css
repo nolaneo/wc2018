@@ -99,7 +99,7 @@ h3 {
 }
 
 .u__hidden {
-  display: none;
+  display: none !important;
 }
 
 table {
