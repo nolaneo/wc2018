@@ -1,5 +1,3 @@
 import MatchList from './match-list';
 
-export default MatchList.extend({
-  filtering: "in progress",
-});
+export default MatchList.extend();

@@ -10,18 +10,39 @@ export default Component.extend({
   ajax: inject(),
   matchService: inject(),
 
+  init() {
+    this._super(...arguments);
+    this.set('sortedPlayers', []);
+  },
+
   didInsertElement() {
     this._super(...arguments);
     this.get('fetchPoolResults').perform();
   },
 
+  poolPlayers: computed('sortedPlayers.[]', 'currentlyPlayingPlayers.[]', function() {
+    let sortedPlayers = this.get('sortedPlayers');
+    sortedPlayers.forEach(player => {
+      Ember.set(player, 'currentlyPlaying', this.get('currentlyPlayingPlayers').includes(player.name));
+    });
+    return sortedPlayers;
+  }),
+
+  currentlyPlayingPlayers: computed('matchService.liveMatches.[]', function() {
+    let matchService = this.get('matchService');
+    let livePlayers = new Set();
+    matchService.get('liveMatches').forEach(match => {
+      livePlayers.add(matchService.playerNameForCountry(match.home_team_country));
+      livePlayers.add(matchService.playerNameForCountry(match.away_team_country));
+    });
+    return Array.from(livePlayers);
+  }),
+
   fetchPoolResults: task(function * () {
     let data = yield this.get('ajax').request('https://world-cup-json.herokuapp.com/teams/results');
     let players = this.get('players');
     players.forEach(player => {
-      STATISTICS.forEach(statistic => {
-        player[statistic] = 0;
-      });
+      STATISTICS.forEach(statistic => player[statistic] = 0);
     });
     data.forEach(teamResult => {
       let player = this.get('matchService.teamToPlayerSet')[teamResult.country];

@@ -15,6 +15,10 @@ export default Service.extend({
     this.set('matches', []);
   },
 
+  liveMatches: computed('matches.[]', function() {
+    return this.get('matches').filter(match => match.status === 'in progress');
+  }),
+
   start(players) {
     this.set('players', players);
     this.get('fetchMatches').perform();
@@ -68,6 +72,10 @@ export default Service.extend({
     return result;
   }),
 
+  filterMatches(status) {
+    return this.get('matches').filter(match => match.status === status);
+  },
+
   injectGameStages(matchArray) {
     return matchArray.map((match, index) => {
       match.stage = matchData[index].stage;
@@ -77,8 +85,8 @@ export default Service.extend({
 
   injectPlayerName(matchArray) {
     return matchArray.map(match => {
-      match.home_team.player_name = this.playerNameForCountry(match.home_team.country);
-      match.away_team.player_name = this.playerNameForCountry(match.away_team.country);
+      match.home_team.player_name = this.playerNameForCountry(match.home_team_country);
+      match.away_team.player_name = this.playerNameForCountry(match.away_team_country);
       return match;
     })
   },

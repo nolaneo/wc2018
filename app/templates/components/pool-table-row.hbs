@@ -9,6 +9,14 @@
 <td>
   <b>{{player.name}}</b>
 </td>
+<td class="live-col">
+{{#if player.currentlyPlaying}}
+  <div class="ring-container">
+    <div class="ringring"></div>
+    <div class="circle"></div>
+  </div>
+{{/if}}
+</td>
 <td>
   {{player.games_played}}
 </td>

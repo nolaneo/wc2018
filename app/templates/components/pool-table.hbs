@@ -2,6 +2,7 @@
   <thead>
     <th>POOL TABLE</th>
     <th class="u__width__100">PLAYER</th>
+    <th></th>
     <th>PL</th>
     <th class="small-col">W</th>
     <th class="small-col">D</th>
@@ -12,7 +13,7 @@
     <th>PTS</th>
   </thead>
   <tbody>
-    {{#each sortedPlayers as |player|}}
+    {{#each poolPlayers as |player|}}
       {{pool-table-row
         player=player
         filterPlayer=filterPlayer
