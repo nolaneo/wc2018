@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import { computed } from '@ember/object';
 
 export default Component.extend({
-  classNames: ['layout__box', 'o__flexes-to-1', 'o__has-rows', 'u__pad__50', 'stat-table'],
+  classNames: ['layout__box', 'o__flexes-to-1', 'o__has-rows', 'stat-table'],
   classNameBindings: ['hasNoEvents:u__hidden'],
   hasNoEvents: computed.empty('events'),
   events: computed('match.{home_team_events,away_team_events}', function() {

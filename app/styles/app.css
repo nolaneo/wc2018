@@ -98,6 +98,10 @@ h3 {
   border-bottom: 1px solid #ddd;
 }
 
+.stat-table {
+  padding: 10px 50px;
+}
+
 .u__hidden {
   display: none !important;
 }
