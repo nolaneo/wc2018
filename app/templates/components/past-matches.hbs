@@ -4,7 +4,7 @@
     {{#if filterPlayer}} <b>for {{filterPlayer}}</b>{{/if}}
     {{#if matchesFilteredByPlayer.length}}({{matchesFilteredByPlayer.length}}){{/if}}
   </h3>
-  <div class="{{if isOpen 'chevron top' 'chevron bottom'}}" style="opacity: 0.3; margin-right: 20px; margin-top: 5px;"></div> 
+  <div class="{{if isOpen 'chevron top' 'chevron bottom'}}" style="opacity: 0.3; margin-right: 20px; margin-top: 5px;"></div>
 </h3>
 
 {{#if isOpen}}
@@ -16,7 +16,7 @@
     {{/each}}
   </div>
 
-  {{#if initialMatchFetch.isRunning}}
+  {{#if matchService.initialFetchRunning}}
     <div class="layout__box o__flexes-to-1 o__centers-horizontally">
       <div class="t__centered">
         <div class="loader"></div>

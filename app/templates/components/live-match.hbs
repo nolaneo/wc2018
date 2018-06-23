@@ -9,10 +9,10 @@
     <b>{{uppercase match.stage}} LIVE</b> ({{match.time}})
   </div>
   <div class="clock-tick">
-    {{#if fetchMatches.isRunning}}
+    {{#if matchService.isRunning}}
       Updating...
     {{else}}
-      Updating in: {{clockTime}}
+      Updating in: {{matchService.clockTime}}
     {{/if}}
   </div>
 </div>

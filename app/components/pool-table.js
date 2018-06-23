@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import { computed } from '@ember/object';
 import { task } from 'ember-concurrency';
 import { inject } from '@ember/service';
 
@@ -7,13 +8,10 @@ const STATISTICS = ['wins', 'draws', 'losses', 'goals_for', 'goals_against', 'ga
 export default Component.extend({
   classNames: ['card', 'o__no-padding', 'layout__box', 'o__has-rows', 'pool-table', 'u__mb__20'],
   ajax: inject(),
+  matchService: inject(),
+
   didInsertElement() {
     this._super(...arguments);
-    let teamToPlayerSet = {};
-    this.get('players').map(player => {
-      player.teams.map(team => teamToPlayerSet[team] = player);
-    });
-    this.set('teamToPlayerSet', teamToPlayerSet);
     this.get('fetchPoolResults').perform();
   },
 
@@ -26,7 +24,7 @@ export default Component.extend({
       });
     });
     data.forEach(teamResult => {
-      let player = this.get('teamToPlayerSet')[teamResult.country];
+      let player = this.get('matchService.teamToPlayerSet')[teamResult.country];
       STATISTICS.forEach(statistic => {
         if (player) {
           player[statistic] += teamResult[statistic];
@@ -42,23 +40,22 @@ export default Component.extend({
       return 1;
     if (a.points > b.points)
       return -1;
-    
+
     if (a.goal_differential < b.goal_differential)
       return 1;
     if (a.goal_differential > b.goal_differential)
       return -1;
-  
+
     if (a.goals_for < b.goals_for)
       return 1;
     if (a.goals_for > b.goals_for)
       return -1;
-  
+
     if (a.won < b.won)
       return 1;
     if (a.won > b.won)
       return -1;
-  
+
     return 0;
   }
 });
-
