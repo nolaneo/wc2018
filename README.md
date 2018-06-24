@@ -2,14 +2,14 @@
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone git@github.com:nolaneo/wc2018.git` this repository
 * `cd wc2018`
 * `yarn`
 
 ## Running / Development
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* `ember server`
+* Visit the app at [http://localhost:4200](http://localhost:4200).
 
 ### Deploying
 
