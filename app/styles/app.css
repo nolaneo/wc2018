@@ -102,6 +102,16 @@ h3 {
   padding: 10px 50px;
 }
 
+.past-match-toggle {
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 -10px 20px;
+}
+
+.past-match-toggle:hover {
+  background: white;
+}
+
 .u__hidden {
   display: none !important;
 }

@@ -1,5 +1,10 @@
-<h3 class="u__mb__20 layout__box o__flexes-to-1 u__hover" {{action 'toggle'}}>
-  Completed matches <span class="{{if isOpen 'chevron top' 'chevron bottom'}}" style="opacity: 0.3; margin-top: 10px;"></span> 
+<h3 class="past-match-toggle u__mb__20 layout__box o__flexes-to-1 u__hover o__has-rows o__centers-vertically" {{action 'toggle'}}>
+  <h3 class="layout__box o__flexes-to-1">
+    Completed matches
+    {{#if filterPlayer}} <b>for {{filterPlayer}}</b>{{/if}}
+    {{#if matchesFilteredByPlayer.length}}({{matchesFilteredByPlayer.length}}){{/if}}
+  </h3>
+  <div class="{{if isOpen 'chevron top' 'chevron bottom'}}" style="opacity: 0.3; margin-right: 20px; margin-top: 5px;"></div> 
 </h3>
 
 {{#if isOpen}}
