@@ -494,7 +494,31 @@ td {
 
 @media only screen and (max-width: 768px) {
   .small-stat-text * {
-    font-size: 10px;
+    font-size: 8px;
+  }
+
+  .stat-table {
+    padding: 5px !important;
+  }
+
+  .stat-image {
+    transform: scale(0.8);
+  }
+
+  .past-match .upcoming-match-flag {
+    width: 20px;
+  }
+
+  .past-match .past-score {
+    font-size: 15px;
+  }
+
+  .past-match .upcoming-country-name {
+    font-size: 9px;
+  }
+
+  .past-score {
+    margin: 5px !important;
   }
 
   .pool-table th {
@@ -532,19 +556,20 @@ td {
   }
 
   .score {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .score-divider {
     font-size: 20px;
   }
 
-  .live-team-name {
-    width: 100px;
-    font-size: 13px;
+  .live-match-container .live-team-name {
+    max-width: 70px !important;
+    min-width: 0;
+    font-size: 11px;
   }
 
-  .card {
+  /* .card {
     transform: scale(0.7);
     transform-origin: top;
     margin: 0 -80px;
@@ -552,6 +577,10 @@ td {
 
   .pool-table {
     margin-bottom: -70px;
+  } */
+
+  * {
+    font-size: 10px;
   }
 }
 
