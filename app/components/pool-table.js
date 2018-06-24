@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { computed } from '@ember/object';
+import { computed, set } from '@ember/object';
 import { task } from 'ember-concurrency';
 import { inject } from '@ember/service';
 
@@ -23,7 +23,7 @@ export default Component.extend({
   poolPlayers: computed('sortedPlayers.[]', 'currentlyPlayingPlayers.[]', function() {
     let sortedPlayers = this.get('sortedPlayers');
     sortedPlayers.forEach(player => {
-      Ember.set(player, 'currentlyPlaying', this.get('currentlyPlayingPlayers').includes(player.name));
+      set(player, 'currentlyPlaying', this.get('currentlyPlayingPlayers').includes(player.name));
     });
     return sortedPlayers;
   }),
