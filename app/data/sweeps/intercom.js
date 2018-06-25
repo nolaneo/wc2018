@@ -21,7 +21,7 @@ export default [
   },
   {
     name: "Marty",
-    teams: ["England", "Uruguay", "Serbia", "Iran"]
+    teams: ["Saudi Arabia", "Panama", "Costa Rica", "Morocco"]
   },
   {
     name: "Waheed",
