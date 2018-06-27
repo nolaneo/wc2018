@@ -549,7 +549,7 @@ td {
   }
 
   .pool-table-flag.o__out {
-    filter: grayscale(1);
+    /* filter: grayscale(1); */
   }
 
   .live-match-container {
