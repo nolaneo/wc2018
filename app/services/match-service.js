@@ -15,6 +15,10 @@ export default Service.extend({
     this.set('matches', []);
   },
 
+  futureMatches: computed('matches.[]', function() {
+    return this.get('matches').filter(match => match.status === 'future');
+  }),
+
   liveMatches: computed('matches.[]', function() {
     return this.get('matches').filter(match => match.status === 'in progress');
   }),

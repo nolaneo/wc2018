@@ -548,6 +548,10 @@ td {
     width: 20px;
   }
 
+  .pool-table-flag.o__out {
+    filter: grayscale(1);
+  }
+
   .live-match-container {
     padding: 10px;
   }
