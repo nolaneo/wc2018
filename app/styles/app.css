@@ -416,12 +416,18 @@ td {
   100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
 }
 
+.no-width {
+  max-width: 0px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 .live-col {
   transform: scale(0.5);
 }
 
 .live-col .ring-container {
-  left: -30px;
+  left: -35px;
 }
 
 .loader,
