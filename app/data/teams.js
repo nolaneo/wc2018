@@ -1,162 +1,258 @@
 export default [
   {
-    "team": "Brazil",
-    "pool": "E",
-    "odds": "5.5"
+    "id": 23,
+    "country": "Sweden",
+    "alternate_name": null,
+    "fifa_code": "SWE",
+    "group_id": 6,
+    "group_letter": "F"
   },
   {
-    "team": "Germany",
-    "pool": "F",
-    "odds": "5.5"
+    "id": 24,
+    "country": "Korea Republic",
+    "alternate_name": null,
+    "fifa_code": "KOR",
+    "group_id": 6,
+    "group_letter": "F"
   },
   {
-    "team": "Spain",
-    "pool": "B",
-    "odds": "6.5"
+    "id": 21,
+    "country": "Germany",
+    "alternate_name": null,
+    "fifa_code": "GER",
+    "group_id": 6,
+    "group_letter": "F"
   },
   {
-    "team": "France",
-    "pool": "C",
-    "odds": "7.0"
+    "id": 20,
+    "country": "Serbia",
+    "alternate_name": null,
+    "fifa_code": "SRB",
+    "group_id": 5,
+    "group_letter": "E"
   },
   {
-    "team": "Belgium",
-    "pool": "G",
-    "odds": "11.0"
+    "id": 17,
+    "country": "Brazil",
+    "alternate_name": null,
+    "fifa_code": "BRA",
+    "group_id": 5,
+    "group_letter": "E"
   },
   {
-    "team": "Argentina",
-    "pool": "D",
-    "odds": "11.0"
+    "id": 18,
+    "country": "Switzerland",
+    "alternate_name": null,
+    "fifa_code": "SUI",
+    "group_id": 5,
+    "group_letter": "E"
   },
   {
-    "team": "England",
-    "pool": "G",
-    "odds": "17.0"
+    "id": 19,
+    "country": "Costa Rica",
+    "alternate_name": null,
+    "fifa_code": "CRC",
+    "group_id": 5,
+    "group_letter": "E"
   },
   {
-    "team": "Portugal",
-    "pool": "B",
-    "odds": "23.0"
+    "id": 25,
+    "country": "Belgium",
+    "alternate_name": null,
+    "fifa_code": "BEL",
+    "group_id": 7,
+    "group_letter": "G"
   },
   {
-    "team": "Uruguay",
-    "pool": "A",
-    "odds": "26.0"
+    "id": 27,
+    "country": "Tunisia",
+    "alternate_name": null,
+    "fifa_code": "TUN",
+    "group_id": 7,
+    "group_letter": "G"
   },
   {
-    "team": "Croatia",
-    "pool": "D",
-    "odds": "34.0"
+    "id": 28,
+    "country": "England",
+    "alternate_name": null,
+    "fifa_code": "ENG",
+    "group_id": 7,
+    "group_letter": "G"
   },
   {
-    "team": "Colombia",
-    "pool": "H",
-    "odds": "34.0"
+    "id": 26,
+    "country": "Panama",
+    "alternate_name": null,
+    "fifa_code": "PAN",
+    "group_id": 7,
+    "group_letter": "G"
   },
   {
-    "team": "Russia",
-    "pool": "A",
-    "odds": "41.0"
+    "id": 32,
+    "country": "Japan",
+    "alternate_name": null,
+    "fifa_code": "JPN",
+    "group_id": 8,
+    "group_letter": "H"
   },
   {
-    "team": "Poland",
-    "pool": "H",
-    "odds": "51.0"
+    "id": 30,
+    "country": "Senegal",
+    "alternate_name": null,
+    "fifa_code": "SEN",
+    "group_id": 8,
+    "group_letter": "H"
   },
   {
-    "team": "Denmark",
-    "pool": "C",
-    "odds": "81.0"
+    "id": 29,
+    "country": "Poland",
+    "alternate_name": null,
+    "fifa_code": "POL",
+    "group_id": 8,
+    "group_letter": "H"
   },
   {
-    "team": "Mexico",
-    "pool": "F",
-    "odds": "101.0"
+    "id": 31,
+    "country": "Colombia",
+    "alternate_name": null,
+    "fifa_code": "COL",
+    "group_id": 8,
+    "group_letter": "H"
   },
   {
-    "team": "Switzerland",
-    "pool": "E",
-    "odds": "101.0"
+    "id": 4,
+    "country": "Uruguay",
+    "alternate_name": null,
+    "fifa_code": "URU",
+    "group_id": 1,
+    "group_letter": "A"
   },
   {
-    "team": "Serbia",
-    "pool": "E",
-    "odds": "126.0"
+    "id": 1,
+    "country": "Russia",
+    "alternate_name": null,
+    "fifa_code": "RUS",
+    "group_id": 1,
+    "group_letter": "A"
   },
   {
-    "team": "Sweden",
-    "pool": "F",
-    "odds": "151.0"
+    "id": 2,
+    "country": "Saudi Arabia",
+    "alternate_name": null,
+    "fifa_code": "KSA",
+    "group_id": 1,
+    "group_letter": "A"
   },
   {
-    "team": "Egypt",
-    "pool": "A",
-    "odds": "151.0"
+    "id": 3,
+    "country": "Egypt",
+    "alternate_name": null,
+    "fifa_code": "EGY",
+    "group_id": 1,
+    "group_letter": "A"
   },
   {
-    "team": "Peru",
-    "pool": "C",
-    "odds": "201.0"
+    "id": 6,
+    "country": "Spain",
+    "alternate_name": null,
+    "fifa_code": "ESP",
+    "group_id": 2,
+    "group_letter": "B"
   },
   {
-    "team": "Nigeria",
-    "pool": "D",
-    "odds": "201.0"
+    "id": 7,
+    "country": "Morocco",
+    "alternate_name": null,
+    "fifa_code": "MAR",
+    "group_id": 2,
+    "group_letter": "B"
   },
   {
-    "team": "Iceland",
-    "pool": "D",
-    "odds": "201.0"
+    "id": 8,
+    "country": "Iran",
+    "alternate_name": null,
+    "fifa_code": "IRN",
+    "group_id": 2,
+    "group_letter": "B"
   },
   {
-    "team": "Senegal",
-    "pool": "H",
-    "odds": "201.0"
+    "id": 5,
+    "country": "Portugal",
+    "alternate_name": null,
+    "fifa_code": "POR",
+    "group_id": 2,
+    "group_letter": "B"
   },
   {
-    "team": "Japan",
-    "pool": "H",
-    "odds": "251.0"
+    "id": 12,
+    "country": "Denmark",
+    "alternate_name": null,
+    "fifa_code": "DEN",
+    "group_id": 3,
+    "group_letter": "C"
   },
   {
-    "team": "Australia",
-    "pool": "C",
-    "odds": "276.0"
+    "id": 9,
+    "country": "France",
+    "alternate_name": null,
+    "fifa_code": "FRA",
+    "group_id": 3,
+    "group_letter": "C"
   },
   {
-    "team": "Morocco",
-    "pool": "B",
-    "odds": "326.0"
+    "id": 10,
+    "country": "Australia",
+    "alternate_name": null,
+    "fifa_code": "AUS",
+    "group_id": 3,
+    "group_letter": "C"
   },
   {
-    "team": "Iran",
-    "pool": "B",
-    "odds": "501.0"
+    "id": 11,
+    "country": "Peru",
+    "alternate_name": null,
+    "fifa_code": "PER",
+    "group_id": 3,
+    "group_letter": "C"
   },
   {
-    "team": "Costa Rica",
-    "pool": "E",
-    "odds": "501.0"
+    "id": 14,
+    "country": "Iceland",
+    "alternate_name": null,
+    "fifa_code": "ISL",
+    "group_id": 4,
+    "group_letter": "D"
   },
   {
-    "team": "South Korea",
-    "pool": "F",
-    "odds": "501.0"
+    "id": 15,
+    "country": "Croatia",
+    "alternate_name": null,
+    "fifa_code": "CRO",
+    "group_id": 4,
+    "group_letter": "D"
   },
   {
-    "team": "Tunisia",
-    "pool": "G",
-    "odds": "501.0"
+    "id": 16,
+    "country": "Nigeria",
+    "alternate_name": null,
+    "fifa_code": "NGA",
+    "group_id": 4,
+    "group_letter": "D"
   },
   {
-    "team": "Panama",
-    "pool": "G",
-    "odds": "501.0"
+    "id": 13,
+    "country": "Argentina",
+    "alternate_name": null,
+    "fifa_code": "ARG",
+    "group_id": 4,
+    "group_letter": "D"
   },
   {
-    "team": "Saudi Arabia",
-    "pool": "A",
-    "odds": "501.0"
+    "id": 22,
+    "country": "Mexico",
+    "alternate_name": null,
+    "fifa_code": "MEX",
+    "group_id": 6,
+    "group_letter": "F"
   }
 ];

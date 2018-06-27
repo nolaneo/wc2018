@@ -1,7 +1,7 @@
 import Service, { inject }  from '@ember/service';
 import { computed } from '@ember/object';
 import { task, timeout } from 'ember-concurrency';
-import matchData from 'wc2018/data/matches';
+import teamData from 'wc2018/data/teams';
 
 export default Service.extend({
   ajax: inject(),
@@ -81,8 +81,12 @@ export default Service.extend({
   },
 
   injectGameStages(matchArray) {
-    return matchArray.map((match, index) => {
-      match.stage = matchData[index].stage;
+    return matchArray.map((match) => {
+      if (match.stage_name == 'First stage') {
+        match.stage = `Group ${teamData.findBy('country', match.home_team_country).group_letter}`;
+      } else {
+        match.stage = match.stage_name;
+      }
       return match;
     });
   },

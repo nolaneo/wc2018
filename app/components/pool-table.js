@@ -45,7 +45,9 @@ export default Component.extend({
   }),
 
   fetchPoolResults: task(function * () {
-    let data = yield this.get('ajax').request('https://world-cup-json.herokuapp.com/teams/results');
+    let data = yield this.get('ajax').request('https://world-cup-json.herokuapp.com/teams/group_results');
+    data = data.mapBy('ordered_teams');
+    data = data.reduce((accumulator, data) => accumulator.pushObjects(data), []);
     let players = this.get('players');
     players.forEach(player => {
       STATISTICS.forEach(statistic => player[statistic] = 0);
