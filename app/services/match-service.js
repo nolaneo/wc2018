@@ -100,7 +100,7 @@ export default Service.extend({
           let team = oldMatch.winner || "To be determined";
           match.home_team_country = team;
           match.home_team.country = team;
-          match.home_team.code = null;
+          match.home_team.code = oldMatch.winner_code || "TBD";
           console.log(`Injected ${team} as participant for ${match.stage_name} from ${oldMatch.home_team_country} v ${oldMatch.away_team_country}`);
         }
       }
@@ -111,7 +111,7 @@ export default Service.extend({
           let team = oldMatch.winner || "To be determined";
           match.away_team_country = team;
           match.away_team.country = team;
-          match.home_team.code = null;
+          match.away_team.code = oldMatch.winner_code || "TBD";
           console.log(`Injected ${team} as participant for ${match.stage_name} from ${oldMatch.home_team_country} v ${oldMatch.away_team_country}`);
         }
       }
