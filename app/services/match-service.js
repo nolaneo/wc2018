@@ -93,6 +93,26 @@ export default Service.extend({
 
   injectPlayerName(matchArray) {
     return matchArray.map(match => {
+      if (match.home_team.team_tbd) {
+        let teamIndex = Number.parseInt(match.home_team.team_tbd.replace('W', '')) - 1;
+        if (matchArray[teamIndex]) {
+          let oldMatch = (matchArray[teamIndex] || {});
+          let team = oldMatch.winner || "To be determined";
+          match.home_team_country = team;
+          match.home_team.country = team;
+          console.log(`Injected ${team} as participant for ${match.stage_name} from ${oldMatch.home_team_country} v ${oldMatch.away_team_country}`);
+        }
+      }
+      if (match.away_team.team_tbd) {
+        let teamIndex = Number.parseInt(match.away_team.team_tbd.replace('W', '')) - 1;
+        if (matchArray[teamIndex]) {
+          let oldMatch = (matchArray[teamIndex] || {});
+          let team = oldMatch.winner || "To be determined";
+          match.away_team_country = team;
+          match.away_team.country = team;
+          console.log(`Injected ${team} as participant for ${match.stage_name} from ${oldMatch.home_team_country} v ${oldMatch.away_team_country}`);
+        }
+      }
       match.home_team.player_name = this.playerNameForCountry(match.home_team_country);
       match.away_team.player_name = this.playerNameForCountry(match.away_team_country);
       return match;

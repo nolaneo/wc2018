@@ -20,9 +20,10 @@ export default Component.extend({
     this.get('fetchPoolResults').perform();
   },
 
-  upcomingTeams: computed('matchService.futureMatches.[]', function() {
-    let homeTeams = this.get('matchService.futureMatches').mapBy('home_team.country');
-    let awayTeams = this.get('matchService.futureMatches').mapBy('away_team.country');
+  upcomingTeams: computed('matchService.matches.[]', function() {
+    let matches = this.get('matchService.matches').rejectBy('status', 'completed');
+    let homeTeams = matches.mapBy('home_team.country');
+    let awayTeams = matches.mapBy('away_team.country');
     return homeTeams.concat(awayTeams);
   }),
 
